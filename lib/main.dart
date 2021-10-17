@@ -961,6 +961,155 @@ class _StackFoodState extends State<StackFood> {
             ),
             SizedBox(
               height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'New on App Name',
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                  ),
+                  TextButton(
+                    child: Text(
+                      'View All',
+                      style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.orange,
+                          decoration: TextDecoration.underline),
+                    ),
+                    onPressed: () {},
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              width: 15,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 15),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Material(
+                      borderRadius: BorderRadius.circular(10),
+                      elevation: 10,
+                      color: Colors.white,
+                      child: Container(
+                        height: 217,
+                        width: 300,
+                        child: Container(
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 145,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(10),
+                                        topRight: Radius.circular(10)),
+                                    image: DecorationImage(
+                                        image:
+                                            AssetImage('assets/new/new1.jpg'))),
+                              ),
+                              Container(
+                                margin: EdgeInsets.all(7),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Hungry Puppets',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    SizedBox(
+                                      height: 5,
+                                    ),
+                                    Text('76A eight avenue, New York, USA',
+                                        style: TextStyle(fontSize: 9)),
+                                    Row(
+                                      children: [
+                                        Image.asset(
+                                          'assets/5star.png',
+                                          height: 25,
+                                          width: 55,
+                                        ),
+                                        Text('(2)',
+                                            style: TextStyle(fontSize: 9)),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Material(
+                      borderRadius: BorderRadius.circular(10),
+                      elevation: 10,
+                      color: Colors.white,
+                      child: Container(
+                        height: 217,
+                        width: 300,
+                        child: Container(
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 145,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(10),
+                                        topRight: Radius.circular(10)),
+                                    image: DecorationImage(
+                                        image:
+                                            AssetImage('assets/new/new2.jpg'))),
+                              ),
+                              Container(
+                                margin: EdgeInsets.all(7),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Hungry Puppets',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    SizedBox(
+                                      height: 5,
+                                    ),
+                                    Text('76A eight avenue, New York, USA',
+                                        style: TextStyle(fontSize: 9)),
+                                    Row(
+                                      children: [
+                                        Image.asset(
+                                          'assets/5star.png',
+                                          height: 25,
+                                          width: 55,
+                                        ),
+                                        Text('(2)',
+                                            style: TextStyle(fontSize: 9)),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20,
             )
           ],
         ),
