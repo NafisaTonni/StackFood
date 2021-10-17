@@ -1,17 +1,23 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 void main() {
   runApp(MaterialApp(debugShowCheckedModeBanner: false, home: StackFood()));
 }
 
 class StackFood extends StatefulWidget {
-  const StackFood({Key? key}) : super(key: key);
-
   @override
   _StackFoodState createState() => _StackFoodState();
 }
 
 class _StackFoodState extends State<StackFood> {
+  final List<String> images = [
+    'assets/carousel1.JPG',
+    'assets/carousel2.JPG',
+    'assets/carousel3.JPG'
+  ];
+  int activeindeX = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,13 +42,13 @@ class _StackFoodState extends State<StackFood> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              navItems(items: 0, icon: Icon(Icons.home_filled)),
-              navItems(items: 1, icon: Icon(Icons.favorite)),
+              IconButton(onPressed: () {}, icon: Icon(Icons.home_filled)),
+              IconButton(onPressed: () {}, icon: Icon(Icons.favorite)),
               SizedBox(
                 width: 20,
               ),
-              navItems(items: 2, icon: Icon(Icons.bookmark)),
-              navItems(items: 3, icon: Icon(Icons.menu_rounded))
+              IconButton(onPressed: () {}, icon: Icon(Icons.bookmark)),
+              IconButton(onPressed: () {}, icon: Icon(Icons.menu_rounded))
             ],
           ),
         ),
@@ -54,50 +60,85 @@ class _StackFoodState extends State<StackFood> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
-          child: Column(
-            children: [
-              Material(
-                borderRadius: BorderRadius.circular(5),
-                elevation: 8,
-                child: Container(
-                  //color: Colors.white,
-                  height: 45,
-                  width: 350,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
-                    child: Row(
-                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Flexible(
-                          child: TextField(
-                            decoration: InputDecoration.collapsed(
-                                hintText: 'Search food or restaurant here...',
-                                hintStyle: TextStyle(
-                                    fontSize: 13, color: Colors.black26)),
-                            style: TextStyle(fontSize: 13, color: Colors.black),
-                          ),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 15,
+            ),
+            Material(
+              borderRadius: BorderRadius.circular(5),
+              elevation: 8,
+              child: Container(
+                //color: Colors.white,
+                height: 45,
+                width: 330,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  child: Row(
+                    //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Flexible(
+                        child: TextField(
+                          decoration: InputDecoration.collapsed(
+                              hintText: 'Search food or restaurant here...',
+                              hintStyle: TextStyle(
+                                  fontSize: 13, color: Colors.black26)),
+                          style: TextStyle(fontSize: 13, color: Colors.black),
                         ),
-                        IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.search_rounded,
-                              color: Colors.black26,
-                            ))
-                      ],
-                    ),
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.search_rounded,
+                            color: Colors.black26,
+                          ))
+                    ],
                   ),
                 ),
-              )
-            ],
-          ),
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CarouselSlider.builder(
+                    itemCount: images.length,
+                    itemBuilder: (context, index1, index2) {
+                      final image = images[index1];
+                      return Container(
+                        margin: EdgeInsets.symmetric(horizontal: 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: DecorationImage(
+                                image: AssetImage(image), fit: BoxFit.cover)),
+                      );
+                    },
+                    options: CarouselOptions(
+                      height: 80,
+                      onPageChanged: (index, reason) =>
+                          setState(() => activeindeX = index),
+                      viewportFraction: 0.8,
+                      autoPlay: true,
+                      enableInfiniteScroll: true,
+                    )),
+                SizedBox(
+                  height: 8,
+                ),
+                AnimatedSmoothIndicator(
+                    effect: ScrollingDotsEffect(
+                        dotHeight: 8,
+                        dotWidth: 7,
+                        dotColor: Colors.grey,
+                        activeDotColor: Colors.orange),
+                    activeIndex: activeindeX,
+                    count: images.length)
+              ],
+            )
+          ],
         ),
       ),
     );
-  }
-
-  Widget navItems({required int items, required Icon icon}) {
-    return IconButton(onPressed: () {}, icon: icon);
   }
 }
