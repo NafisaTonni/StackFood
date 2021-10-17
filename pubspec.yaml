@@ -59,6 +59,9 @@ flutter:
     - assets/popular/burger.jpg
     - assets/popular/pasta.jpg
     - assets/popular/pizza.jpg
+    - assets/campaign/special1.jpg
+    - assets/campaign/special2.jpg
+    - assets/campaign/special3.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
