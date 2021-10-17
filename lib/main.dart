@@ -193,7 +193,10 @@ class _StackFoodState extends State<StackFood> {
                         SizedBox(
                           height: 10,
                         ),
-                        Text('All')
+                        Text(
+                          'All',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )
                       ],
                     ),
                     SizedBox(
@@ -217,7 +220,10 @@ class _StackFoodState extends State<StackFood> {
                         SizedBox(
                           height: 10,
                         ),
-                        Text('Coffee')
+                        Text(
+                          'Coffee',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )
                       ],
                     ),
                     SizedBox(
@@ -241,7 +247,10 @@ class _StackFoodState extends State<StackFood> {
                         SizedBox(
                           height: 10,
                         ),
-                        Text('Drink')
+                        Text(
+                          'Drink',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )
                       ],
                     ),
                     SizedBox(
@@ -250,22 +259,24 @@ class _StackFoodState extends State<StackFood> {
                     Column(
                       children: [
                         Material(
-                          elevation: 10,
-                          borderRadius: BorderRadius.circular(10),
-                          child: Container(
-                            margin: EdgeInsets.all(5),
-                            color: Colors.white,
-                            height: 45,
-                            width: 45,
-                            child: Image(
-                              image: AssetImage('assets/cats/cat4.png'),
-                            ),
-                          ),
-                        ),
+                            elevation: 10,
+                            borderRadius: BorderRadius.circular(10),
+                            child: Container(
+                              margin: EdgeInsets.all(5),
+                              color: Colors.white,
+                              height: 45,
+                              width: 45,
+                              child: Image(
+                                image: AssetImage('assets/cats/cat4.png'),
+                              ),
+                            )),
                         SizedBox(
                           height: 10,
                         ),
-                        Text('Fast Food')
+                        Text(
+                          'Fast Food',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )
                       ],
                     ),
                     SizedBox(
@@ -289,7 +300,10 @@ class _StackFoodState extends State<StackFood> {
                         SizedBox(
                           height: 10,
                         ),
-                        Text('Cake')
+                        Text(
+                          'Cake',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )
                       ],
                     ),
                     SizedBox(
@@ -313,7 +327,10 @@ class _StackFoodState extends State<StackFood> {
                         SizedBox(
                           height: 10,
                         ),
-                        Text('Sushi')
+                        Text(
+                          'Sushi',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )
                       ],
                     ),
                   ],
