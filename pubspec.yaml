@@ -62,6 +62,8 @@ flutter:
     - assets/campaign/special1.jpg
     - assets/campaign/special2.jpg
     - assets/campaign/special3.jpg
+    - assets/restaurants/rest1.jpg
+    - assets/restaurants/rest2.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
