@@ -33,12 +33,24 @@ class _StackFoodState extends State<StackFood> {
           '76A eighth avenue, New York, US',
           style: TextStyle(color: Colors.black26, fontSize: 13),
         ),
-        leading: Icon(
-          Icons.home_filled,
-          color: Colors.black26,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: Icon(
+            Icons.home_filled,
+            color: Colors.black26,
+          ),
         ),
         backgroundColor: Colors.white,
         elevation: 0,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.notification_add_rounded,
+              color: Colors.black,
+            ),
+          )
+        ],
       ),
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
