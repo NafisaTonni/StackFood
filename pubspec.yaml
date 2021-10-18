@@ -66,6 +66,9 @@ flutter:
     - assets/restaurants/rest2.jpg
     - assets/new/new1.jpg
     - assets/new/new2.jpg
+    - assets/all/dom.jpg
+    - assets/all/mc.jpg
+    - assets/all/star.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

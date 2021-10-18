@@ -17,6 +17,11 @@ class _StackFoodState extends State<StackFood> {
     'assets/carousel2.JPG',
     'assets/carousel3.JPG'
   ];
+  List<Map> menu = [
+    {'id': '1', 'option': 'All'},
+    {'id': '2', 'option': 'Take Away'},
+    {'id': '3', 'option': 'Home Delivery'}
+  ];
 
   int activeindeX = 0;
   @override
@@ -371,71 +376,97 @@ class _StackFoodState extends State<StackFood> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    Material(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                      elevation: 10,
-                      child: Container(
-                        height: 80,
-                        width: 200,
-                        child: Container(
-                          margin: EdgeInsets.all(5),
-                          child: Row(
-                            children: [
-                              Container(
-                                height: 60,
-                                width: 60,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/popular/burger.jpg'))),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 10),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Burger',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    Text(
-                                      'Mc Donald, New York, USA',
-                                      style: TextStyle(fontSize: 9),
-                                    ),
-                                    Image.asset(
-                                      'assets/5star.png',
-                                      height: 25,
-                                      width: 55,
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                    Stack(
+                      children: [
+                        Material(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          elevation: 10,
+                          child: Container(
+                            height: 80,
+                            width: 200,
+                            child: Container(
+                              margin: EdgeInsets.all(5),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    height: 60,
+                                    width: 60,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                'assets/popular/burger.jpg'))),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'S5',
+                                          'Burger',
                                           style: TextStyle(
-                                              fontSize: 9,
                                               fontWeight: FontWeight.bold),
                                         ),
-                                        SizedBox(
-                                          width: 80,
+                                        Text(
+                                          'Mc Donald, New York, USA',
+                                          style: TextStyle(fontSize: 9),
                                         ),
-                                        Container(
-                                            height: 15,
-                                            width: 15,
-                                            child: Icon(Icons.add))
+                                        Image.asset(
+                                          'assets/5star.png',
+                                          height: 25,
+                                          width: 55,
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              'S5',
+                                              style: TextStyle(
+                                                  fontSize: 9,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(
+                                              width: 80,
+                                            ),
+                                            Container(
+                                                height: 15,
+                                                width: 15,
+                                                child: Icon(Icons.add))
+                                          ],
+                                        )
                                       ],
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                        Positioned(
+                          top: 25,
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: Colors.green[400],
+                                borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(3),
+                                    bottomRight: Radius.circular(3))),
+                            height: 15,
+                            width: 25,
+                            child: Center(
+                              child: Text(
+                                '30% off',
+                                style: TextStyle(
+                                  fontSize: 7,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
                     ),
                     SizedBox(
                       width: 10,
@@ -848,54 +879,81 @@ class _StackFoodState extends State<StackFood> {
                       borderRadius: BorderRadius.circular(10),
                       elevation: 10,
                       color: Colors.white,
-                      child: Container(
-                        height: 217,
-                        width: 300,
-                        child: Container(
-                          child: Column(
-                            children: [
-                              Container(
-                                height: 145,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(10),
-                                        topRight: Radius.circular(10)),
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/restaurants/rest1.jpg'))),
-                              ),
-                              Container(
-                                margin: EdgeInsets.all(7),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Hungry Puppets',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    SizedBox(
-                                      height: 5,
-                                    ),
-                                    Text('76A eight avenue, New York, USA',
-                                        style: TextStyle(fontSize: 9)),
-                                    Row(
+                      child: Stack(
+                        children: [
+                          Container(
+                            height: 217,
+                            width: 300,
+                            child: Container(
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: 145,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(10),
+                                            topRight: Radius.circular(10)),
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                'assets/restaurants/rest1.jpg'))),
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.all(7),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        Image.asset(
-                                          'assets/5star.png',
-                                          height: 25,
-                                          width: 55,
+                                        Text(
+                                          'Hungry Puppets',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
                                         ),
-                                        Text('(2)',
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Text('76A eight avenue, New York, USA',
                                             style: TextStyle(fontSize: 9)),
+                                        Row(
+                                          children: [
+                                            Image.asset(
+                                              'assets/5star.png',
+                                              height: 25,
+                                              width: 55,
+                                            ),
+                                            Text('(2)',
+                                                style: TextStyle(fontSize: 9)),
+                                          ],
+                                        ),
                                       ],
                                     ),
-                                  ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 25,
+                            left: 1,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.green[400],
+                                  borderRadius: BorderRadius.only(
+                                      topRight: Radius.circular(3),
+                                      bottomRight: Radius.circular(3))),
+                              height: 15,
+                              width: 25,
+                              child: Center(
+                                child: Text(
+                                  '30% off',
+                                  style: TextStyle(
+                                    fontSize: 7,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
-                            ],
-                          ),
-                        ),
+                            ),
+                          )
+                        ],
                       ),
                     ),
                     SizedBox(
@@ -997,54 +1055,81 @@ class _StackFoodState extends State<StackFood> {
                       borderRadius: BorderRadius.circular(10),
                       elevation: 10,
                       color: Colors.white,
-                      child: Container(
-                        height: 217,
-                        width: 300,
-                        child: Container(
-                          child: Column(
-                            children: [
-                              Container(
-                                height: 145,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(10),
-                                        topRight: Radius.circular(10)),
-                                    image: DecorationImage(
-                                        image:
-                                            AssetImage('assets/new/new1.jpg'))),
-                              ),
-                              Container(
-                                margin: EdgeInsets.all(7),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Hungry Puppets',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    SizedBox(
-                                      height: 5,
-                                    ),
-                                    Text('76A eight avenue, New York, USA',
-                                        style: TextStyle(fontSize: 9)),
-                                    Row(
+                      child: Stack(
+                        children: [
+                          Container(
+                            height: 217,
+                            width: 300,
+                            child: Container(
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: 145,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(10),
+                                            topRight: Radius.circular(10)),
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                'assets/new/new1.jpg'))),
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.all(7),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        Image.asset(
-                                          'assets/5star.png',
-                                          height: 25,
-                                          width: 55,
+                                        Text(
+                                          'Hungry Puppets',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
                                         ),
-                                        Text('(2)',
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Text('76A eight avenue, New York, USA',
                                             style: TextStyle(fontSize: 9)),
+                                        Row(
+                                          children: [
+                                            Image.asset(
+                                              'assets/5star.png',
+                                              height: 25,
+                                              width: 55,
+                                            ),
+                                            Text('(2)',
+                                                style: TextStyle(fontSize: 9)),
+                                          ],
+                                        ),
                                       ],
                                     ),
-                                  ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 25,
+                            left: 1,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.green[400],
+                                  borderRadius: BorderRadius.only(
+                                      topRight: Radius.circular(3),
+                                      bottomRight: Radius.circular(3))),
+                              height: 15,
+                              width: 50,
+                              child: Center(
+                                child: Text(
+                                  'Free Delivery',
+                                  style: TextStyle(
+                                    fontSize: 7,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
-                            ],
-                          ),
-                        ),
+                            ),
+                          )
+                        ],
                       ),
                     ),
                     SizedBox(
@@ -1110,6 +1195,291 @@ class _StackFoodState extends State<StackFood> {
             ),
             SizedBox(
               height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'All Restaurants',
+                        style: TextStyle(
+                            fontSize: 17, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        '200+ Near You',
+                        style: TextStyle(fontSize: 9),
+                      ),
+                    ],
+                  ),
+                  PopupMenuButton<int>(
+                    itemBuilder: (context) => [
+                      PopupMenuItem(child: Text('All')),
+                      PopupMenuDivider(),
+                      PopupMenuItem(child: Text('Take Away')),
+                      PopupMenuDivider(),
+                      PopupMenuItem(child: Text('Home Delivery')),
+                    ],
+                    child: Icon(Icons.miscellaneous_services_rounded),
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(15),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Material(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Container(
+                          height: 69,
+                          width: 100,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                  image: AssetImage('assets/all/mc.jpg'))),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Mc Donald's",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text('American cuisine,',
+                              style: TextStyle(fontSize: 9)),
+                          Text('fast food', style: TextStyle(fontSize: 9)),
+                          Image.asset(
+                            'assets/5star.png',
+                            height: 25,
+                            width: 55,
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        width: 110,
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.favorite_border_rounded),
+                        color: Colors.grey,
+                        onPressed: () {},
+                      )
+                    ],
+                  ),
+                  Divider(
+                    color: Colors.grey,
+                  ),
+                  Row(
+                    children: [
+                      Material(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Container(
+                          height: 69,
+                          width: 100,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                  image: AssetImage('assets/all/star.jpg'))),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Starbucks",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text('American cuisine,',
+                              style: TextStyle(fontSize: 9)),
+                          Text('fast food', style: TextStyle(fontSize: 9)),
+                          Image.asset(
+                            'assets/5star.png',
+                            height: 25,
+                            width: 55,
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        width: 115,
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.favorite_border_rounded),
+                        color: Colors.grey,
+                        onPressed: () {},
+                      )
+                    ],
+                  ),
+                  Divider(
+                    color: Colors.grey,
+                  ),
+                  Row(
+                    children: [
+                      Material(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Stack(
+                          children: [
+                            Container(
+                              height: 69,
+                              width: 100,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                      image: AssetImage('assets/all/dom.jpg'))),
+                            ),
+                            Positioned(
+                              top: 8,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.green[400],
+                                    borderRadius: BorderRadius.only(
+                                        topRight: Radius.circular(3),
+                                        bottomRight: Radius.circular(3))),
+                                height: 15,
+                                width: 25,
+                                child: Center(
+                                  child: Text(
+                                    '30% off',
+                                    style: TextStyle(
+                                      fontSize: 7,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Dominos",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text('American cuisine,',
+                              style: TextStyle(fontSize: 9)),
+                          Text('fast food', style: TextStyle(fontSize: 9)),
+                          Image.asset(
+                            'assets/5star.png',
+                            height: 25,
+                            width: 55,
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        width: 115,
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.favorite_border_rounded),
+                        color: Colors.grey,
+                        onPressed: () {},
+                      )
+                    ],
+                  ),
+                  Divider(
+                    color: Colors.grey,
+                  ),
+                  Row(
+                    children: [
+                      Material(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Stack(
+                          children: [
+                            Container(
+                              height: 69,
+                              width: 100,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                      image: AssetImage('assets/all/dom.jpg'))),
+                            ),
+                            Positioned(
+                              top: 8,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.green[400],
+                                    borderRadius: BorderRadius.only(
+                                        topRight: Radius.circular(3),
+                                        bottomRight: Radius.circular(3))),
+                                height: 15,
+                                width: 25,
+                                child: Center(
+                                  child: Text(
+                                    '30% off',
+                                    style: TextStyle(
+                                      fontSize: 7,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Dominos",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text('American cuisine,',
+                              style: TextStyle(fontSize: 9)),
+                          Text('fast food', style: TextStyle(fontSize: 9)),
+                          Image.asset(
+                            'assets/5star.png',
+                            height: 25,
+                            width: 55,
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        width: 115,
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.favorite_border_rounded),
+                        color: Colors.grey,
+                        onPressed: () {},
+                      )
+                    ],
+                  ),
+                  Divider(
+                    color: Colors.grey,
+                  )
+                ],
+              ),
             )
           ],
         ),
