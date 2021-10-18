@@ -72,19 +72,17 @@ class _StackFoodState extends State<StackFood> {
             SizedBox(
               height: 15,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20),
+            Center(
               child: Material(
                 borderRadius: BorderRadius.circular(5),
+                color: Colors.white,
                 elevation: 8,
                 child: Container(
-                  //color: Colors.white,
                   height: 45,
                   width: 350,
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 15),
                     child: Row(
-                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Flexible(
                           child: TextField(
@@ -383,15 +381,15 @@ class _StackFoodState extends State<StackFood> {
                           borderRadius: BorderRadius.circular(10),
                           elevation: 10,
                           child: Container(
-                            height: 80,
-                            width: 200,
+                            height: 90,
+                            width: 220,
                             child: Container(
                               margin: EdgeInsets.all(5),
                               child: Row(
                                 children: [
                                   Container(
-                                    height: 60,
-                                    width: 60,
+                                    height: 67,
+                                    width: 67,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(8),
                                         image: DecorationImage(
@@ -399,7 +397,7 @@ class _StackFoodState extends State<StackFood> {
                                                 'assets/popular/burger.jpg'))),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 10),
+                                    padding: const EdgeInsets.only(left: 5),
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -459,7 +457,7 @@ class _StackFoodState extends State<StackFood> {
                               child: Text(
                                 '30% off',
                                 style: TextStyle(
-                                  fontSize: 7,
+                                  fontSize: 5,
                                   color: Colors.white,
                                 ),
                               ),
@@ -476,15 +474,15 @@ class _StackFoodState extends State<StackFood> {
                       borderRadius: BorderRadius.circular(10),
                       elevation: 10,
                       child: Container(
-                        height: 80,
-                        width: 200,
+                        height: 90,
+                        width: 220,
                         child: Container(
                           margin: EdgeInsets.all(5),
                           child: Row(
                             children: [
                               Container(
-                                height: 60,
-                                width: 60,
+                                height: 67,
+                                width: 67,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(8),
                                     image: DecorationImage(
@@ -492,7 +490,7 @@ class _StackFoodState extends State<StackFood> {
                                             'assets/popular/pasta.jpg'))),
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(left: 10),
+                                padding: const EdgeInsets.only(left: 5),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -545,15 +543,15 @@ class _StackFoodState extends State<StackFood> {
                       borderRadius: BorderRadius.circular(10),
                       elevation: 10,
                       child: Container(
-                        height: 80,
-                        width: 200,
+                        height: 90,
+                        width: 220,
                         child: Container(
                           margin: EdgeInsets.all(5),
                           child: Row(
                             children: [
                               Container(
-                                height: 60,
-                                width: 60,
+                                height: 67,
+                                width: 67,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(8),
                                     image: DecorationImage(
@@ -561,7 +559,7 @@ class _StackFoodState extends State<StackFood> {
                                             'assets/popular/pizza.jpg'))),
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(left: 10),
+                                padding: const EdgeInsets.only(left: 5),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -650,7 +648,7 @@ class _StackFoodState extends State<StackFood> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(color: Colors.black26)),
-                        height: 230,
+                        height: 245,
                         width: 165,
                         child: Container(
                           child: Column(
@@ -716,7 +714,7 @@ class _StackFoodState extends State<StackFood> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(color: Colors.black26)),
-                        height: 230,
+                        height: 245,
                         width: 165,
                         child: Container(
                           child: Column(
@@ -780,7 +778,7 @@ class _StackFoodState extends State<StackFood> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(color: Colors.black26)),
-                        height: 230,
+                        height: 245,
                         width: 165,
                         child: Container(
                           child: Column(
@@ -882,7 +880,7 @@ class _StackFoodState extends State<StackFood> {
                       child: Stack(
                         children: [
                           Container(
-                            height: 217,
+                            height: 225,
                             width: 300,
                             child: Container(
                               child: Column(
@@ -946,7 +944,7 @@ class _StackFoodState extends State<StackFood> {
                                 child: Text(
                                   '30% off',
                                   style: TextStyle(
-                                    fontSize: 7,
+                                    fontSize: 5,
                                     color: Colors.white,
                                   ),
                                 ),
@@ -964,7 +962,7 @@ class _StackFoodState extends State<StackFood> {
                       elevation: 10,
                       color: Colors.white,
                       child: Container(
-                        height: 217,
+                        height: 225,
                         width: 300,
                         child: Container(
                           child: Column(
@@ -1058,7 +1056,7 @@ class _StackFoodState extends State<StackFood> {
                       child: Stack(
                         children: [
                           Container(
-                            height: 217,
+                            height: 225,
                             width: 300,
                             child: Container(
                               child: Column(
@@ -1122,7 +1120,7 @@ class _StackFoodState extends State<StackFood> {
                                 child: Text(
                                   'Free Delivery',
                                   style: TextStyle(
-                                    fontSize: 7,
+                                    fontSize: 5,
                                     color: Colors.white,
                                   ),
                                 ),
@@ -1140,7 +1138,7 @@ class _StackFoodState extends State<StackFood> {
                       elevation: 10,
                       color: Colors.white,
                       child: Container(
-                        height: 217,
+                        height: 225,
                         width: 300,
                         child: Container(
                           child: Column(
@@ -1358,7 +1356,7 @@ class _StackFoodState extends State<StackFood> {
                                   child: Text(
                                     '30% off',
                                     style: TextStyle(
-                                      fontSize: 7,
+                                      fontSize: 5,
                                       color: Colors.white,
                                     ),
                                   ),
@@ -1432,7 +1430,7 @@ class _StackFoodState extends State<StackFood> {
                                   child: Text(
                                     '30% off',
                                     style: TextStyle(
-                                      fontSize: 7,
+                                      fontSize: 5,
                                       color: Colors.white,
                                     ),
                                   ),
